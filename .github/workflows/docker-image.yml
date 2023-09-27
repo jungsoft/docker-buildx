@@ -28,6 +28,7 @@ jobs:
         id: buildx
         with:
           install: true
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
       -
         name: Build and push with Buildx
         run: docker build --platform linux/amd64,linux/arm64,linux/arm/v7 . --tag jungsoft/docker-buildx --tag jungsoft/docker-buildx:$(date +%s) --push
