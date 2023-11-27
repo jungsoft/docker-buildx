@@ -1,4 +1,4 @@
 FROM docker:stable
 COPY --from=docker/buildx-bin /buildx /usr/libexec/docker/cli-plugins/docker-buildx
-RUN docker buildx install
-RUN docker buildx create --use
+RUN docker context create builder
+RUN docker buildx create builder --use
